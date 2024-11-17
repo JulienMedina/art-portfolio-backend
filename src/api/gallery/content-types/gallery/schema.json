@@ -22,13 +22,11 @@
     },
     "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "artStatus": {
@@ -37,7 +35,8 @@
         "available",
         "sold"
       ],
-      "required": true
+      "required": true,
+      "default": "available"
     },
     "dimensions": {
       "type": "text",
