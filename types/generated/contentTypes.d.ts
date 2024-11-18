@@ -447,16 +447,14 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
   };
   attributes: {
     artStatus: Schema.Attribute.Enumeration<['available', 'sold']> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'available'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     dimensions: Schema.Attribute.Text & Schema.Attribute.Required;
-    image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    > &
+    image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -464,6 +462,7 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
       'api::gallery.gallery'
     > &
       Schema.Attribute.Private;
+    price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
