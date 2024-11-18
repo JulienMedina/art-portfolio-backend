@@ -35,13 +35,19 @@
       "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "Lieu": {
       "type": "string",
+      "required": true
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": [
+        "grand",
+        "petit"
+      ],
       "required": true
     }
   }
