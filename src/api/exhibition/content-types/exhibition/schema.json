@@ -49,6 +49,9 @@
         "petit"
       ],
       "required": true
+    },
+    "Redirection_Link": {
+      "type": "string"
     }
   }
 }
